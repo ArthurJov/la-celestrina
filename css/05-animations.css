@@ -1,0 +1,100 @@
+/* ==========================================================================
+   ANIMAÇÕES E ESTADOS INICIAIS
+   ========================================================================== */
+
+/* Preloader */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background-color: var(--color-bg-void);
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  /* clip-path inicial para animação de saída (inteiro) */
+  clip-path: inset(0 0 0% 0);
+  transition: clip-path 700ms var(--ease-in-out-s);
+}
+
+.preloader__logo {
+  opacity: 0;
+  transform: scale(0.94);
+  /* Será animado pelo JS, mas preparamos a transição */
+  transition: opacity 900ms var(--ease-out-expo), transform 900ms var(--ease-out-expo);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.preloader__logo img {
+  width: clamp(180px, 25vw, 270px);
+  height: auto;
+  filter: drop-shadow(0 0 30px rgba(201, 169, 110, 0.3));
+  animation: preloaderPulse 2.4s ease-in-out infinite alternate;
+}
+
+@keyframes preloaderPulse {
+  0% {
+    filter: drop-shadow(0 0 20px rgba(201, 169, 110, 0.15));
+    transform: scale(0.98);
+  }
+  100% {
+    filter: drop-shadow(0 0 40px rgba(201, 169, 110, 0.35));
+    transform: scale(1.02);
+  }
+}
+
+/* ==========================================================================
+   CLASSES DE ESTADO INICIAL (REVEAL)
+   ========================================================================== */
+.js-fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.js-mask {
+  overflow: hidden;
+  display: block;
+  padding-bottom: 0.2em; /* Compensa descendentes como ç, g, p */
+  margin-bottom: -0.2em; /* Mantém a altura visual exata */
+}
+
+.js-mask-inner {
+  display: block;
+  transform: translateY(110%);
+}
+
+.js-img-reveal {
+  filter: brightness(0.3) grayscale(0.5);
+  opacity: 0.4;
+  transform: scale(1.06);
+}
+
+/* ==========================================================================
+   PREFERS REDUCED MOTION
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .js-fade-up,
+  .js-mask-inner,
+  .js-img-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+  
+  #preloader {
+    display: none !important;
+  }
+  
+  body.is-loading {
+    overflow: auto;
+  }
+}

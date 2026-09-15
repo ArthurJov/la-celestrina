@@ -1,0 +1,83 @@
+/* ==========================================================================
+   RESET E CONFIGURAÇÃO GLOBAL
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 
+  Regra crítica para o preloader:
+  Ocultamos todo o conteúdo no início.
+  Será revertido via JS quando pronto, evitando "flash of unstyled content"
+*/
+body.is-loading {
+  overflow: hidden; /* previne scroll enquanto preloader estiver ativo */
+}
+
+body {
+  background-color: var(--color-bg-base);
+  color: var(--color-text-cream);
+  min-height: 100vh;
+  /* dynamic viewport height no mobile */
+  min-height: 100dvh; 
+  /* Evitar layout shift */
+  overflow-x: hidden;
+  position: relative; /* Para o pseudo-elemento do grain */
+}
+
+/* 
+  Efeito de Film Grain (Ruído Orgânico)
+  Adiciona textura táctil e remove o aspecto "digital plástico" 
+*/
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+/* Seleção de texto elegante */
+::selection {
+  background-color: var(--color-gold-rich);
+  color: var(--color-bg-base);
+}

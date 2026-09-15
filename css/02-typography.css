@@ -1,0 +1,87 @@
+/* ==========================================================================
+   TIPOGRAFIA GLOBAL
+   ========================================================================== */
+
+body {
+  font-family: var(--font-ui);
+  font-size: var(--text-base);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-hero);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--color-text-cream);
+}
+
+/* Helper Classes para Headings fluidos */
+.text-display {
+  font-size: var(--text-display);
+  font-weight: 300;
+  letter-spacing: var(--tracking-tight);
+}
+
+.text-3xl {
+  font-size: var(--text-3xl);
+  font-weight: 400;
+}
+
+.text-2xl {
+  font-size: var(--text-2xl);
+  font-weight: 400;
+}
+
+.text-xl {
+  font-size: var(--text-xl);
+  font-weight: 600; /* Para nomes de pratos, por exemplo */
+}
+
+.text-lg {
+  font-size: var(--text-lg);
+}
+
+.text-sm {
+  font-size: var(--text-sm);
+}
+
+.text-xs {
+  font-size: var(--text-xs);
+}
+
+/* Helpers Adicionais */
+.text-muted {
+  color: var(--color-text-muted);
+  opacity: 0.75;
+}
+
+.text-gold {
+  color: var(--color-gold-rich);
+}
+
+.italic {
+  font-style: italic;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.tracking-wide {
+  letter-spacing: var(--tracking-wide);
+}
+
+.tracking-widest {
+  letter-spacing: var(--tracking-widest);
+}
+
+/* Eyebrow Tag (Estilo frequente em seções de luxo) */
+.eyebrow {
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  color: var(--color-gold-rich);
+}

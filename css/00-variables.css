@@ -1,0 +1,76 @@
+:root {
+  /* ==========================================================================
+     PALETA DE CORES — "La Celestrina — Terroso Mediterrâneo"
+     4 cores oficiais: Preto Café · Bordô Profundo · Creme · Dourado Envelhecido
+     ========================================================================== */
+  --color-bg-void: #17110F; /* Preto café */
+  --color-bg-base: #1D1613; /* Café levemente mais claro */
+  --color-bg-surface: #241A16; /* Cards e seções */
+  --color-bg-elevated: #2C1F1A; /* Header com scroll */
+  
+  --color-gold-rich: #C49A5A; /* Dourado envelhecido — linhas, ícones, bordas, pequenos destaques */
+  --color-gold-light: #D9BC8B; /* Dourado claro (hover de links/ícones) */
+  --color-gold-muted: #A98A5E; /* Dourado escurecido, textos secundários com toque dourado */
+  --color-gold-border: rgba(196, 154, 90, 0.18);
+  
+  --color-bordo-deep: #4A1919; /* Bordô escurecido — estados pressionados/sombra */
+  --color-bordo-accent: #6B2525; /* Bordô profundo — cor de botão/CTA principal */
+  --color-bordo-hover: #7F3030; /* Bordô hover — mais claro que o bordô base */
+  
+  --color-text-cream: #F2E7D3; /* Texto principal sobre fundo escuro */
+  --color-text-muted: #C9BBA0; /* Creme dessaturado, texto secundário */
+  --color-text-ghost: #8A7D6A; /* Texto terciário — legendas, datas */
+
+  /* ==========================================================================
+     TIPOGRAFIA
+     ========================================================================== */
+  --font-hero: 'Cormorant Garamond', serif;
+  --font-ui: 'DM Sans', sans-serif;
+
+  /* Escala Tipográfica (Fluid Type) */
+  --text-xs: 0.75rem; /* 12px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-base: 1rem; /* 16px */
+  --text-lg: 1.25rem; /* 20px */
+  --text-xl: clamp(1.5rem, 2.5vw, 2rem); /* 24–32px */
+  --text-2xl: clamp(1.75rem, 4vw, 3rem); /* 28–48px */
+  --text-3xl: clamp(2rem, 6vw, 4.5rem); /* 32–72px */
+  --text-display: clamp(2.25rem, 8vw, 6.5rem); /* 36–104px (evita quebra de palavras como Tradição no mobile) */
+
+  /* Letter Spacing */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.10em; /* Ampliado para sensação mais editorial */
+  --tracking-widest: 0.18em;
+
+  /* ==========================================================================
+     ESPAÇAMENTO - "O Luxo Respira"
+     ========================================================================== */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 32px;
+  --space-lg: 64px;
+  --space-xl: 96px;
+  --space-2xl: 160px;
+
+  /* Padding de seções — responsivo automático */
+  --section-y: clamp(80px, 12vw, 160px);
+  --section-x: clamp(24px, 8vw, 120px);
+
+  /* ==========================================================================
+     TOKENS DE MOTION
+     ========================================================================== */
+  /* Durações */
+  --dur-instant: 150ms;
+  --dur-fast: 300ms;
+  --dur-base: 500ms;
+  --dur-slow: 800ms;
+  --dur-luxe: 1200ms;
+  --dur-cinema: 1600ms;
+
+  /* Curvas de Aceleração */
+  --ease-smooth: cubic-bezier(0.25, 0.10, 0.25, 1.00); /* Padrão elegante */
+  --ease-out-expo: cubic-bezier(0.16, 1.00, 0.30, 1.00); /* Rápido → lento */
+  --ease-in-out-s: cubic-bezier(0.77, 0.00, 0.18, 1.00); /* S-curve cinematográfico */
+  --ease-hover: cubic-bezier(0.40, 0.00, 0.20, 1.00); /* Hover sedutores */
+}

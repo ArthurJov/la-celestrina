@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Metadados SEO -->
+  <title>La Celestrina | Restaurante Italiano e Frutos do Mar em Vilas do Atlântico, Lauro de Freitas</title>
+  <meta name="description" content="Gastronomia italiana e frutos do mar desde 2013. Magia Celestrina, risoto de lagosta e clássicos do Chef Osmar em Vilas do Atlântico. 4,6★ no Google. Reserve sua mesa.">
+
+  <!-- Open Graph (WhatsApp / Instagram preview) -->
+  <meta property="og:title" content="La Celestrina | Italiano e Frutos do Mar">
+  <meta property="og:description" content="Cozinha italiana e mediterrânea desde 2013 em Vilas do Atlântico. 4,6★ no Google.">
+  <meta property="og:image" content="./assets/images/hero/lacelestrina-main-hero.png">
+  <meta property="og:url" content="#">
+  <!-- PENDENTE: substituir og:url pela URL definitiva do site quando publicado -->
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/logo/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="./assets/logo/favicon-64x64.png">
+  <link rel="apple-touch-icon" href="./assets/logo/favicon.png">
+  <link rel="icon" type="image/jpeg" href="./assets/logo/favicon.jpg">
+
+  <!-- Google Fonts: Cormorant Garamond & DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS Principal -->
+  <link rel="stylesheet" href="./css/00-variables.css">
+  <link rel="stylesheet" href="./css/01-base.css">
+  <link rel="stylesheet" href="./css/02-typography.css">
+  <link rel="stylesheet" href="./css/03-components.css">
+  <link rel="stylesheet" href="./css/04-sections.css">
+  <link rel="stylesheet" href="./css/05-animations.css">
+  <link rel="stylesheet" href="./css/06-responsive.css">
+</head>
+<body class="is-loading">
+  <!-- Cursor Magnético Customizado -->
+  <div class="custom-cursor"></div>
+
+  <!-- ==========================================
+       BLOCO 0 - PRELOADER
+       ========================================== -->
+  <div id="preloader">
+    <figure class="preloader__logo">
+      <img src="./assets/logo/logo-main.png" alt="La Celestrina">
+    </figure>
+  </div>
+
+  <!-- ==========================================
+       BLOCO 1 - HEADER INTELIGENTE
+       ========================================== -->
+  <header class="site-header" id="header">
+    <div class="site-header__container">
+      <a href="#" class="site-header__logo">
+        <img src="./assets/logo/logo-main.png" alt="La Celestrina">
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="site-header__nav">
+        <a href="#manifesto" class="nav-link">A Casa</a>
+        <a href="#menu" class="nav-link">Menu</a>
+        <a href="#galeria" class="nav-link">Galeria</a>
+      </nav>
+
+      <a href="https://wa.me/5571996994065?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20reserva%20no%20La%20Celestrina." target="_blank" rel="noopener noreferrer" class="btn btn--outline site-header__cta">Reservar Mesa <span class="arrow">↗</span></a>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="site-header__menu-btn" aria-label="Abrir Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Menu Mobile Overlay -->
+  <div class="mobile-menu">
+    <div class="mobile-menu__brand" style="margin-bottom: 2rem;">
+      <img src="./assets/logo/logo-main.png" alt="La Celestrina" style="height: 52px; width: auto; object-fit: contain;">
+    </div>
+    <nav class="mobile-menu__nav">
+      <a href="#manifesto" class="mobile-link">A Casa</a>
+      <a href="#menu" class="mobile-link">Menu</a>
+      <a href="#galeria" class="mobile-link">Galeria</a>
+      <a href="https://wa.me/5571996994065?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20reserva%20no%20La%20Celestrina." target="_blank" rel="noopener noreferrer" class="btn btn--outline mobile-cta">Reservar Mesa</a>
+    </nav>
+  </div>
+
+  <!-- ==========================================
+       CONTEÚDO PRINCIPAL
+       ========================================== -->
+  <main>
+    <!-- BLOCO 2 - HERO -->
+    <section class="hero" id="hero">
+      <div class="hero__bg-wrapper">
+        <img src="./assets/images/hero/lacelestrina-main-hero.png" alt="Interior de restaurante italiano com iluminação acolhedora" class="hero__bg-img">
+      </div>
+      <div class="hero__overlay"></div>
+
+      <div class="hero__content">
+        <h1 class="hero__title text-display">
+          <div class="js-mask"><span class="js-mask-inner">Uma Joia Sem Placa,</span></div>
+          <div class="js-mask"><span class="js-mask-inner">Nascida para Encantar.</span></div>
+        </h1>
+
+        <p class="hero__subtitle text-lg text-muted js-fade-up">
+          Cozinha italiana e mediterrânea com alma de família — frutos do mar,<br>massas artesanais e a história do Chef Osmar em Vilas do Atlântico.
+        </p>
+
+        <div class="hero__ctas js-fade-up">
+          <a href="https://wa.me/5571996994065?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20reserva%20no%20La%20Celestrina." target="_blank" rel="noopener noreferrer" class="btn btn--primary">Reservar Mesa</a>
+          <!-- PENDENTE: inserir link iFood correto da unidade Lauro de Freitas -->
+          <a href="#ifood" class="btn btn--text">Pedir via iFood</a>
+        </div>
+      </div>
+
+      <div class="hero__scroll-indicator js-fade-up">
+        <span>↓</span>
+      </div>
+    </section>
+
+    <!-- BLOCO 3 - MANIFESTO (A Casa / História) -->
+    <section class="manifesto section-padding" id="manifesto">
+      <div class="container manifesto__grid">
+        <div class="manifesto__img-wrapper js-img-reveal">
+          <img src="./assets/images/manifesto/manifesto-foto.jpg" alt="Chef preparando massa fresca artesanal na cozinha" class="manifesto__img" data-speed="0.9">
+        </div>
+        <div class="manifesto__content">
+          <p class="eyebrow js-fade-up">A Nossa História</p>
+          <div class="manifesto__separator"></div>
+          <h2 class="text-3xl js-fade-up">Uma joia escondida<br>que virou point</h2>
+          <p class="text-muted js-fade-up">
+            Tudo começou em 2013, quando o chef Osmar Santos decidiu transformar anos de experiência em grandes cozinhas de Salvador em um restaurante só seu — no próprio bairro onde morava. O nome é uma homenagem à sua avó, Dona Celestrina.
+          </p>
+          <p class="text-muted js-fade-up">
+            O que nasceu como uma joia escondida, sem nem placa na porta, se tornou um dos restaurantes italianos mais queridos da região. Hoje em Vilas do Atlântico, a cozinha segue fiel à mesma filosofia: comida de chef, sofisticada, a preço justo.
+          </p>
+          <div class="manifesto__anchor js-fade-up" style="display: flex; align-items: center; gap: 1.75rem; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+              <img src="./assets/logo/logo-badge.png" alt="Selo La Celestrina - Tradição desde 2013" style="width: 64px; height: 64px; border-radius: 50%; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.35)); flex-shrink: 0;">
+              <div>
+                <div class="text-gold" style="font-family: var(--font-hero); font-size: 1.15rem; font-weight: 600; line-height: 1.2;">Tradição & Família</div>
+                <div class="text-sm text-muted">Desde 2013 em Vilas</div>
+              </div>
+            </div>
+            <div style="width: 1px; height: 44px; background: var(--color-gold-border); opacity: 0.6;"></div>
+            <div>
+              <div class="text-xl text-gold" style="line-height: 1.2; font-weight: 600;">4,6★ no<br>Google</div>
+              <div class="text-sm text-muted" style="line-height: 1.4; max-width: 190px;">130 avaliações de clientes apaixonados</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCO 4 - DESTAQUES DO MENU -->
+    <section class="menu-highlights section-padding" id="menu">
+      <div class="container">
+        <header class="menu__header js-fade-up">
+          <p class="eyebrow">Nossas Especialidades</p>
+          <h2 class="text-3xl">Sabores do Chef Osmar</h2>
+        </header>
+
+        <ul class="menu-list">
+          <li class="menu-list__item js-menu-item" data-image="./assets/images/pratos/prato-01.jpg">
+            <div class="menu-list__info">
+              <h3 class="text-xl text-gold">Magia Celestrina</h3>
+              <!-- RASCUNHO: confirmar ingredientes/preparo com o restaurante antes de publicar -->
+              <p class="text-sm text-muted">O prato-assinatura da casa: mix de frutos do mar grelhados — lagosta, badejo, camarão e salmão — servido com massa ou legumes. O mais pedido.</p>
+            </div>
+            <div class="menu-list__price" style="font-style: italic; opacity: 0.8;">Consulte</div>
+            <!-- PENDENTE: inserir preço oficial do prato-assinatura Magia Celestrina -->
+            <div class="menu-list__img-mobile"><img src="./assets/images/pratos/prato-01.jpg" alt="Prato de frutos do mar grelhados com massa"></div>
+          </li>
+          
+          <li class="menu-list__item js-menu-item" data-image="./assets/images/pratos/prato-02.jpg">
+            <div class="menu-list__info">
+              <h3 class="text-xl text-gold">Risoto de Lagosta</h3>
+              <!-- RASCUNHO: descrição genérica — confirmar detalhes de preparo com o restaurante -->
+              <p class="text-sm text-muted">Arroz cremoso com lagosta fresca, um dos pratos mais celebrados da casa.</p>
+            </div>
+            <div class="menu-list__price">R$ 99,90</div>
+            <div class="menu-list__img-mobile"><img src="./assets/images/pratos/prato-02.jpg" alt="Risoto cremoso com lagosta"></div>
+          </li>
+          
+          <li class="menu-list__item js-menu-item" data-image="./assets/images/pratos/prato-03.jpg">
+            <div class="menu-list__info">
+              <h3 class="text-xl text-gold">Filé à Parmegiana</h3>
+              <!-- RASCUNHO: descrição genérica — confirmar detalhes de preparo com o restaurante -->
+              <p class="text-sm text-muted">Filé empanado com molho de tomate e muçarela gratinada. Favorito absoluto dos nossos clientes.</p>
+            </div>
+            <div class="menu-list__price">R$ 69,90</div>
+            <div class="menu-list__img-mobile"><img src="./assets/images/pratos/prato-03.jpg" alt="Filé à parmegiana com queijo gratinado"></div>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Container da Imagem Flutuante (Hover Desktop) -->
+      <div class="menu-hover-image js-menu-hover">
+        <img src="./assets/images/pratos/prato-01.jpg" alt="Prato Preview" loading="lazy">
+      </div>
+    </section>
+
+    <!-- BLOCO 5 - GALERIA -->
+    <section class="gallery section-padding" id="galeria">
+      <div class="container">
+        <header class="gallery__header js-fade-up">
+          <p class="eyebrow">Atmosfera</p>
+          <h2 class="text-3xl">Nosso Salão</h2>
+        </header>
+
+        <div class="gallery__grid">
+          <div class="gallery__item js-img-reveal"><img src="./assets/images/ambiente/salao-01.jpg" alt="Salão de restaurante com iluminação à luz de velas"></div>
+          <div class="gallery__item js-img-reveal"><img src="./assets/images/ambiente/salao-02.jpg" alt="Adega de vinhos com garrafas selecionadas"></div>
+          <div class="gallery__item js-img-reveal"><img src="./assets/images/ambiente/salao-03.jpg" alt="Mesa posta com taças e talheres para jantar"></div>
+          <div class="gallery__item js-img-reveal"><img src="./assets/images/ambiente/salao-04.jpg" alt="Detalhe de decoração clássica italiana"></div>
+          <div class="gallery__item js-img-reveal"><img src="./assets/images/ambiente/salao-05.jpg" alt="Bar com ambiente aconchegante"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       BLOCO 6 - FOOTER
+       ========================================== -->
+  <footer class="site-footer" id="reservas">
+    
+    <div class="footer__zona-a">
+      <h2 class="text-3xl text-cream" style="text-align: center;">Reserve sua mesa.<br>Viva uma experiência única.</h2>
+      
+      <!-- Depoimentos reais de clientes (Google) -->
+      <div style="display: flex; flex-direction: column; gap: 1rem; max-width: 600px; width: 100%; margin: 0.5rem 0;">
+        <blockquote style="border-left: 2px solid var(--color-gold-rich); padding-left: 1rem; font-family: var(--font-hero); font-style: italic; color: var(--color-text-muted); font-size: var(--text-lg); line-height: 1.5;">
+          "Ambiente agradável, boa comida, preço justo."
+        </blockquote>
+        <blockquote style="border-left: 2px solid var(--color-gold-rich); padding-left: 1rem; font-family: var(--font-hero); font-style: italic; color: var(--color-text-muted); font-size: var(--text-lg); line-height: 1.5;">
+          "Sou fã do filé a parmegiana e do risoto de camarão com brie!"
+        </blockquote>
+      </div>
+
+      <div class="footer__zona-a-ctas">
+        <a href="https://wa.me/5571996994065?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20reserva%20no%20La%20Celestrina." target="_blank" rel="noopener noreferrer" class="btn btn--primary">Reservar Mesa</a>
+        <!-- PENDENTE: inserir link iFood correto da unidade Lauro de Freitas -->
+        <a href="#ifood" class="btn btn--ifood">Pedir via iFood</a>
+      </div>
+    </div>
+
+    <div class="container footer__zona-b">
+      <div>
+        <img src="./assets/logo/logo-main.png" alt="La Celestrina" style="height: 64px; margin-bottom: 2rem; max-width: 100%; object-fit: contain;">
+        <p class="text-muted text-sm">Desde 2013 servindo alta gastronomia italiana e frutos do mar com paixão e excelência.</p>
+      </div>
+
+      <div>
+        <h3 class="footer__col-title">Navegação</h3>
+        <ul class="footer__col-list">
+          <li><a href="#manifesto" class="nav-link">A Casa</a></li>
+          <li><a href="#menu" class="nav-link">Menu</a></li>
+          <li><a href="#galeria" class="nav-link">Galeria</a></li>
+          <li><a href="#reservas" class="nav-link">Reservas</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer__col-title">Contato</h3>
+        <ul class="footer__col-list">
+          <li>Av. Praia de Itapuã, 437</li>
+          <li>Vilas do Atlântico – Lauro de Freitas/BA</li>
+          <li><a href="tel:+557135087196" class="nav-link">(71) 3508-7196</a></li>
+          <li><a href="https://wa.me/5571996994065" target="_blank" rel="noopener noreferrer" class="nav-link">(71) 99699-4065 (WhatsApp)</a></li>
+          <!-- PENDENTE: horário de funcionamento — confirmar com o restaurante antes de publicar -->
+          <li><br>Terça a Sábado<br>12h–16h e 18h–22h<br>Domingo · 12h–16h (almoço)<br>Segunda · Fechado</li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer__map-wrapper">
+          <div class="map-overlay js-map-overlay">
+            <span>Toque para interagir</span>
+          </div>
+          <iframe
+            src="https://maps.google.com/maps?q=La+Celestrina+Vilas+do+Atlantico+Lauro+de+Freitas&output=embed&z=16"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Localização do La Celestrina em Vilas do Atlântico">
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__zona-c">
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <p>© 2013–2026 La Celestrina · Todos os direitos reservados</p>
+        <a href="https://arthurjov.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-link" style="color: var(--color-text-muted); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; font-size: 0.9em; transition: color var(--dur-fast) var(--ease-smooth);">
+          Desenvolvido por Arthur Vieira 
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
+      </div>
+      <div class="footer__social">
+        <a href="https://www.instagram.com/lacelestrinaa/" target="_blank" rel="noopener noreferrer" class="nav-link">Instagram</a>
+        <a href="https://wa.me/5571996994065" target="_blank" rel="noopener noreferrer" class="nav-link">WhatsApp</a>
+        <!-- SUGESTÃO PENDENTE: mencionar unidades de Salvador/Feira de Santana? Confirmar com o cliente se a unidade de Salvador ainda está em funcionamento antes de publicar. -->
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       SCRIPTS (Carregados no final para performance)
+       ========================================== -->
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+  
+  <!-- GSAP Core & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Aplicação (A ordem importa!) -->
+  <script src="./js/preloader.js"></script>
+  <script src="./js/lenis.js"></script>
+  <script src="./js/animations.js"></script>
+  <script src="./js/main.js"></script>
+
+  <!-- Dados Estruturados (Schema.org — SEO Avançado) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "La Celestrina",
+    "description": "Gastronomia italiana e frutos do mar desde 2013. Pratos do Chef Osmar em Vilas do Atlântico, Lauro de Freitas.",
+    "url": "#",
+    "telephone": "+55-71-3508-7196",
+    "servesCuisine": ["Italian", "Mediterranean", "Seafood"],
+    "priceRange": "R$ 60–R$ 160",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Praia de Itapuã, 437",
+      "addressLocality": "Lauro de Freitas",
+      "addressRegion": "BA",
+      "postalCode": "42700-000",
+      "addressCountry": "BR"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.6",
+      "reviewCount": "130"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "12:00",
+        "closes": "16:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "18:00",
+        "closes": "22:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "12:00",
+        "closes": "16:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/lacelestrinaa/"
+    ]
+  }
+  </script>
+
+</body>
+</html>

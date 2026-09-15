@@ -1,0 +1,118 @@
+/* ==========================================================================
+   BREAKPOINTS E RESPONSIVIDADE
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   MÓBILE PRIMEIRO JÁ APLICADO - AJUSTES ESPECÍFICOS PARA TELAS PEQUENAS
+   -------------------------------------------------------------------------- */
+@media (max-width: 375px) {
+  :root {
+    --section-y: 64px;
+    --section-x: 16px;
+  }
+  
+  .hero__title {
+    font-size: 2.5rem; /* Ajuste para não quebrar a palavra */
+  }
+}
+
+/* --------------------------------------------------------------------------
+   DESABILITAR HOVERS E PARALLAX NO MOBILE
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* Evitar efeitos hover "presos" ao toque */
+  .menu-card:hover .menu-card__img,
+  .menu-card:hover .menu-card__overlay,
+  .menu-card:hover .menu-card__title,
+  .menu-card:hover .menu-card__arrow {
+    transform: none;
+    opacity: 0; /* ou opacidade normal */
+    letter-spacing: normal;
+  }
+  
+  /* Resetar a posição fixa/transformações custosas em dispositivos móveis */
+  .hero__bg-img {
+    transform: scale(1.0) !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   TABLET (768px+)
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+  
+  /* Header Grid para centralizar perfeitamente a Navegação */
+  .site-header__container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+  
+  .site-header__logo {
+    justify-self: start;
+  }
+  
+  .site-header__nav {
+    display: flex;
+    justify-self: center;
+  }
+  
+  .site-header__cta {
+    display: inline-flex;
+    justify-self: end;
+  }
+  
+  .site-header__menu-btn {
+    display: none;
+  }
+  
+  /* Manifesto 60/40 Grid */
+  .manifesto__grid {
+    grid-template-columns: 60% 40%;
+    gap: 4rem;
+  }
+  
+  /* Galeria em Masonry Manual */
+  .gallery__grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 300px;
+  }
+  .gallery__item:nth-child(1) { grid-column: 1 / 3; grid-row: 1 / 2; aspect-ratio: auto; }
+  .gallery__item:nth-child(2) { grid-column: 3 / 5; grid-row: 1 / 3; aspect-ratio: auto; }
+  .gallery__item:nth-child(3) { grid-column: 1 / 3; grid-row: 2 / 4; aspect-ratio: auto; }
+  .gallery__item:nth-child(4) { grid-column: 3 / 4; grid-row: 3 / 4; aspect-ratio: auto; }
+  .gallery__item:nth-child(5) { grid-column: 4 / 5; grid-row: 3 / 4; aspect-ratio: auto; }
+
+  /* Esconder miniatura de imagem do cardápio e alinhar lista editorial lado a lado */
+  .menu-list__img-mobile {
+    display: none;
+  }
+  .menu-list__item {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 4rem;
+  }
+  
+  /* Footer Grid */
+  .footer__zona-a-ctas {
+    flex-direction: row;
+    justify-content: center;
+    max-width: none;
+  }
+  .footer__zona-b {
+    grid-template-columns: 1fr 1fr 1fr 2fr;
+  }
+  .footer__zona-c {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   DESKTOP (1024px+)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1024px) {
+  /* Mantido para futuras implementações desktop-only. 
+     O tamanho da fonte do Menu Editorial (.menu-list__price) 
+     agora herda var(--text-lg) para manter o visual limpo e minimalista. */
+}

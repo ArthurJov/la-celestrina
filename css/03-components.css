@@ -1,0 +1,569 @@
+/* ==========================================================================
+   COMPONENTES GERAIS (Botões, containers, etc)
+   ========================================================================== */
+
+/* Container Principal */
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--section-x);
+}
+
+/* Cursor Customizado Desktop */
+.custom-cursor {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: none; /* Remove cursor nativo no desktop */
+  }
+  
+  .custom-cursor {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-gold-rich);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease; /* Animação suave para tamanho */
+  }
+
+  .custom-cursor.is-hovering {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(235, 227, 202, 0.2);
+    backdrop-filter: invert(1);
+    mix-blend-mode: normal; /* Para o invert funcionar de forma estilizada */
+  }
+}
+
+/* Espaçamento Padrão de Seções */
+.section-padding {
+  padding: var(--section-y) 0;
+}
+
+/* ==========================================================================
+   BOTÕES
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  padding: 0 2rem;
+  height: 48px; /* Mínimo para toque responsivo */
+  border-radius: 4px; /* Mais elegante do que bordas 100% retas */
+  transition: all var(--dur-base) var(--ease-smooth);
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+/* Botão Primário */
+.btn--primary {
+  background-color: var(--color-bordo-accent);
+  color: var(--color-text-cream);
+}
+
+@media (hover: hover) {
+  .btn--primary:hover {
+    background-color: var(--color-bordo-hover);
+    transform: scale(1.02);
+  }
+}
+
+/* Botão Outline */
+.btn--outline {
+  border: 1px solid var(--color-bordo-accent);
+  color: var(--color-text-cream);
+  background-color: transparent;
+}
+
+@media (hover: hover) {
+  .btn--outline:hover {
+    background-color: var(--color-bordo-accent);
+    color: var(--color-text-cream);
+  }
+}
+
+/* Botão Texto */
+.btn--text {
+  padding: 0;
+  height: auto;
+  color: var(--color-text-cream);
+  position: relative;
+}
+
+.btn--text::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-gold-rich);
+  transition: width var(--dur-fast) var(--ease-smooth);
+}
+
+@media (hover: hover) {
+  .btn--text:hover::after {
+    width: 100%;
+  }
+}
+
+/* Setas para botões */
+.arrow {
+  display: inline-block;
+  transition: transform var(--dur-fast) var(--ease-hover);
+}
+
+@media (hover: hover) {
+  .btn:hover .arrow {
+    transform: translateX(4px) translateY(-2px); /* Diagonal para a direita/cima */
+  }
+}
+
+/* ==========================================================================
+   BADGES & TAGS
+   ========================================================================== */
+.badge-signature {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(196, 154, 90, 0.12);
+  color: var(--color-gold-light);
+  border: 1px solid var(--color-gold-border);
+  margin-bottom: 0.5rem;
+}
+
+.badge-signature::before {
+  content: '★';
+  font-size: 0.75rem;
+  color: var(--color-gold-rich);
+}
+
+.badge-popular {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(107, 37, 37, 0.25);
+  color: #E89A9A;
+  border: 1px solid rgba(107, 37, 37, 0.45);
+  margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   DEPOIMENTOS / AVALIAÇÕES VERIFICADAS
+   ========================================================================== */
+.testimonials-section {
+  background-color: var(--color-bg-void);
+  border-top: 1px solid var(--color-gold-border);
+}
+
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.testimonial-card {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-gold-border);
+  border-radius: 8px;
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  position: relative;
+  transition: transform var(--dur-fast) var(--ease-smooth), border-color var(--dur-fast) var(--ease-smooth);
+}
+
+@media (hover: hover) {
+  .testimonial-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(196, 154, 90, 0.4);
+  }
+}
+
+.testimonial-card__quote {
+  font-family: var(--font-hero);
+  font-size: 1.35rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--color-text-cream);
+}
+
+.testimonial-card__stars {
+  color: var(--color-gold-rich);
+  font-size: 1rem;
+  letter-spacing: 3px;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-card__author {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(196, 154, 90, 0.12);
+  padding-top: 1rem;
+}
+
+.testimonial-card__author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.testimonial-card__name {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-cream);
+}
+
+.testimonial-card__source {
+  font-size: var(--text-xs);
+  color: var(--color-gold-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ==========================================================================
+   MODAIS & GAVETAS (Cardápio Completo & Delivery)
+   ========================================================================== */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--dur-base) var(--ease-smooth), visibility var(--dur-base) var(--ease-smooth);
+}
+
+.modal.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 8, 7, 0.82);
+  backdrop-filter: blur(14px);
+}
+
+.modal__container {
+  position: relative;
+  z-index: 2;
+  background: var(--color-bg-base);
+  border: 1px solid var(--color-gold-border);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 860px;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+  transform: translateY(20px) scale(0.97);
+  transition: transform var(--dur-base) var(--ease-out-expo);
+}
+
+.modal.is-active .modal__container {
+  transform: translateY(0) scale(1);
+}
+
+.modal__header {
+  padding: 1.75rem 2rem;
+  border-bottom: 1px solid var(--color-gold-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-bg-surface);
+}
+
+.modal__title {
+  font-family: var(--font-hero);
+  font-size: var(--text-2xl);
+  color: var(--color-text-cream);
+}
+
+.modal__subtitle {
+  font-size: var(--text-xs);
+  color: var(--color-gold-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+}
+
+.modal__close {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--color-gold-border);
+  display: grid;
+  place-items: center;
+  color: var(--color-text-cream);
+  font-size: 1.25rem;
+  line-height: 1;
+  transition: all var(--dur-fast) var(--ease-smooth);
+}
+
+@media (hover: hover) {
+  .modal__close:hover {
+    background: var(--color-bordo-accent);
+    color: var(--color-text-cream);
+    transform: scale(1.05);
+  }
+}
+
+.modal__body {
+  padding: 2rem;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-gold-muted) var(--color-bg-base);
+}
+
+/* Estilos do Catálogo de Cardápio Completo */
+.menu-catalog__category {
+  margin-bottom: 2.5rem;
+}
+
+.menu-catalog__category-title {
+  font-family: var(--font-hero);
+  font-size: var(--text-xl);
+  color: var(--color-gold-rich);
+  border-bottom: 1px solid var(--color-gold-border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-catalog__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .menu-catalog__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 2rem;
+  }
+}
+
+.catalog-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.catalog-item__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.catalog-item__name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text-cream);
+}
+
+.catalog-item__price {
+  font-family: var(--font-hero);
+  font-size: 1.05rem;
+  color: var(--color-gold-light);
+  white-space: nowrap;
+}
+
+.catalog-item__desc {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+.modal__footer {
+  padding: 1.25rem 2rem;
+  border-top: 1px solid var(--color-gold-border);
+  background: var(--color-bg-surface);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Modal de Delivery Opções */
+.delivery-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1rem 0;
+}
+
+.delivery-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-gold-border);
+  background: var(--color-bg-surface);
+  text-decoration: none;
+  transition: all var(--dur-fast) var(--ease-smooth);
+}
+
+@media (hover: hover) {
+  .delivery-card:hover {
+    border-color: var(--color-gold-rich);
+    background: var(--color-bg-elevated);
+    transform: translateX(4px);
+  }
+}
+
+.delivery-card__info h4 {
+  font-size: 1.1rem;
+  color: var(--color-text-cream);
+  margin-bottom: 4px;
+}
+
+.delivery-card__info p {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.delivery-card__cta {
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-gold-rich);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   LIGHTBOX DA GALERIA
+   ========================================================================== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(10, 8, 7, 0.95);
+  backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--dur-fast) var(--ease-smooth), visibility var(--dur-fast) var(--ease-smooth);
+}
+
+.lightbox.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.lightbox__figure {
+  position: relative;
+  max-width: 90vw;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lightbox__img {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+  border: 1px solid var(--color-gold-border);
+}
+
+.lightbox__caption {
+  font-family: var(--font-hero);
+  font-size: var(--text-lg);
+  color: var(--color-text-cream);
+  text-align: center;
+  font-style: italic;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--color-gold-border);
+  color: var(--color-text-cream);
+  font-size: 1.5rem;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all var(--dur-fast) var(--ease-smooth);
+}
+
+@media (hover: hover) {
+  .lightbox__close:hover {
+    background: var(--color-bordo-accent);
+    color: var(--color-text-cream);
+  }
+}
+
